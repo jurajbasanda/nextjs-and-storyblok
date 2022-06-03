@@ -158,6 +158,11 @@
   dependencies:
     "@storyblok/js" "^1.2.1"
 
+"@storyblok/storyblok-editable@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/storyblok-editable/-/storyblok-editable-1.1.0.tgz#a355a9ea149d862db262e41514efaf260fbdfb28"
+  integrity sha512-D/OtU2O2pjK+dZaTnWqyhlpz8jGnzZ+8DkZg7O+FTf/r5612RyO7jzRyEkS/opOyYuyFHtw1NwkSVCvnYURf1A==
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
