@@ -1,23 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import { getStoryblokApi, StoryblokComponent } from '@storyblok/react'
 import Layout from '../components/Layout'
 
 export default function Home({ story }) {
-	return (
-		<div className={styles.container}>
-			<Head>
-				<title>Create Next App</title>
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
-			<Layout>
-				<header>
-					<h1>{story ? story.name : 'My Site'}</h1>
-				</header>
-				<StoryblokComponent blok={story.content} />
-			</Layout>
-		</div>
-	)
+	return <StoryblokComponent blok={story.content} />
 }
 
 export async function getStaticProps() {
@@ -26,7 +12,7 @@ export async function getStaticProps() {
 
 	// load the draft version
 	let sbParams = {
-		version: 'draft', // or 'published'
+		version: 'draft' || 'published', // or 'published'
 	}
 
 	const storyblokApi = getStoryblokApi()

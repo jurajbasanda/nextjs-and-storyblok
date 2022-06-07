@@ -1,11 +1,14 @@
 import '../styles/globals.css'
 import { storyblokInit, apiPlugin } from '@storyblok/react'
+import { getStoryblokApi, StoryblokComponent } from '@storyblok/react'
 import Feature from '../components/Feature'
 import Grid from '../components/Grid'
 import Page from '../components/Page'
 import Teaser from '../components/Teaser'
 import Image from '../components/Image'
 import Content from '../components/Content'
+import Layout from '../components/Layout'
+import ContentText from '../components/ContentText'
 
 const apiToken = process.env.NEXT_PUBLIC_API_KEY
 
@@ -16,6 +19,7 @@ const components = {
 	page: Page,
 	image: Image,
 	content: Content,
+	contenttext: ContentText,
 }
 
 storyblokInit({
@@ -25,7 +29,11 @@ storyblokInit({
 })
 
 function MyApp({ Component, pageProps }) {
-	return <Component {...pageProps} />
+	return (
+		<Layout>
+			<Component {...pageProps} />{' '}
+		</Layout>
+	)
 }
 
 export default MyApp

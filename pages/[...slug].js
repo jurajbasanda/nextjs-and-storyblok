@@ -1,13 +1,11 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
 import { useStoryblokState, getStoryblokApi, StoryblokComponent } from '@storyblok/react'
 
 export default function Page({ story }) {
 	story = useStoryblokState(story)
 
 	return (
-		<div className={styles.container}>
+		<div>
 			<Head>
 				<title>{story ? story.name : 'My Site'}</title>
 				<link rel='icon' href='/favicon.ico' />
