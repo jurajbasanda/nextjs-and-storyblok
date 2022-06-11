@@ -6,13 +6,19 @@ export default function Home({ story }) {
 	return <StoryblokComponent blok={story.content} />
 }
 
-export async function getStaticProps() {
-	// home is the default slug for the homepage in Storyblok
+export async function getServerSideProps(context) {
+	// get the query object
+	const insideStoryblok = context.query._storyblok
+	const shouldLoadDraft = context.preview || insideStoryblok
+
 	let slug = 'home'
 
-	// load the draft version
 	let sbParams = {
-		version: 'draft' || 'published', // or 'published'
+		version: 'published', // or 'draft'
+	}
+
+	if (shouldLoadDraft) {
+		sbParams.version = 'draft'
 	}
 
 	const storyblokApi = getStoryblokApi()
@@ -22,7 +28,7 @@ export async function getStaticProps() {
 		props: {
 			story: data ? data.story : false,
 			key: data ? data.story.id : false,
+			preview: shouldLoadDraft || false,
 		},
-		revalidate: 3600, // revalidate every hour
 	}
 }
