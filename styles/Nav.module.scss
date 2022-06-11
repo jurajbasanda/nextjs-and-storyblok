@@ -1,0 +1,10 @@
+.nav {
+	height: 1.8rem;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.178);
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+	}
+}

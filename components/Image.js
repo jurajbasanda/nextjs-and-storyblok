@@ -1,10 +1,13 @@
 import { storyblokEditable } from '@storyblok/react'
+// import { Image } from 'next/image'
 
 const Image = ({ blok }) => {
 	return (
-		<div {...storyblokEditable(blok)}>
-			<img src={blok.image.filename} />
-		</div>
+		<img
+			style={{ maxWidth: '800px' }}
+			{...storyblokEditable(blok)}
+			src={blok.image.filename}
+		/>
 	)
 }
 
