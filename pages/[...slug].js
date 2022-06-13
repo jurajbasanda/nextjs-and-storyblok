@@ -1,4 +1,5 @@
 import Head from 'next/head'
+
 import { useStoryblokState, getStoryblokApi, StoryblokComponent } from '@storyblok/react'
 
 export default function Page({ story }) {

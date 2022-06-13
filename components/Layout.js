@@ -1,17 +1,16 @@
 import React from 'react'
-import Head from 'next/head'
-import styles from '../styles/Layout.module.css'
-import Navbar from './Navbar'
+import Footer from './Footer'
+import Nav from './Nav'
 
-const Layout = ({ children, story }) => {
+const Layout = ({ children }) => {
 	return (
-		<div className={styles.container}>
-			<Navbar />
-			<header>
-				<h1>{story ? story.content.name : 'My Site'}</h1>
-			</header>
-			<main style={{ padding: '0rem' }}>{children}</main>
-		</div>
+		<>
+			<Nav />
+			<div className='bg-gray-200  p-4 px-4 sm:px-6 lg:px-8'>
+				<main style={{ padding: '0rem' }}>{children}</main>
+			</div>
+			<Footer />
+		</>
 	)
 }
 
