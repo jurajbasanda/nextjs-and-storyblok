@@ -1,5 +1,6 @@
 import { render } from 'storyblok-rich-text-react-renderer'
-import React from 'react'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react'
+
 import RichTextResolver from 'storyblok-js-client'
 
 // import StoryblokClient from 'storyblok-js-client'
@@ -9,6 +10,6 @@ import RichTextResolver from 'storyblok-js-client'
 function ContentText({ blok }) {
 	// const html = Storyblok.richTextResolver.render(blok.content)
 	// return <div dangerouslySetInnerHTML={{ __html: html }} />
-	return <div>{render(blok.content)}</div>
+	return <div {...storyblokEditable(blok)}>{render(blok.content)}</div>
 }
 export default ContentText

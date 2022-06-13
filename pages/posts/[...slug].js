@@ -1,8 +1,7 @@
 import Head from 'next/head'
-
 import { useStoryblokState, getStoryblokApi, StoryblokComponent } from '@storyblok/react'
 
-export default function Page({ story }) {
+const PostPage = ({ story }) => {
 	story = useStoryblokState(story)
 
 	return (
@@ -20,6 +19,8 @@ export default function Page({ story }) {
 		</div>
 	)
 }
+
+export default PostPage
 
 export async function getStaticProps({ params }) {
 	let slug = params.slug ? params.slug.join('/') : 'home'
